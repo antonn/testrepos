@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta name="Description" content="Information architecture, Web Design, Web Standards." />
+<meta name="Keywords" content="your, keywords" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="Distribution" content="Global" />
+<meta name="Author" content="Erwin Aligam - ealigam@gmail.com" />
+<meta name="Robots" content="index,follow" />
+
+<link rel="stylesheet" href="../images/Refresh.css" type="text/css" />
+
+<title>3mugs.com</title>
+
+	
+</head>
+
+<body>
+
+
+ <script type="text/javascript">
+
+function VerifyData() {
+
+return true;
+
+
+}
+
+var arrIndia, arrUSA, arrCountries, arrCategories
+arrIndia = ["Bangalore","Chennai","Hyderabad","Mumbai","Delhi","Kolkatta"]
+arrUSA = ["New York", "Washington", "San Francisco","Buffalo"]
+
+arrCountries =[arrIndia, arrUSA]
+
+function handleCityChange(newDisplay){
+
+var StateSelect, CitySelect, NumEntries, i
+StateSelect = document.form1.country
+CitySelect = document.form1.city
+
+// Delete all entries in the cities list box
+for (i = CitySelect.length; i > 0; i--){
+CitySelect.options[i-1] = null
+}
+// Add comment option to City List box
+CitySelect.options[0] = new Option("-- Select City --",0)
+// If state is selected add its cities to the City List box
+
+if (newDisplay >= 0){
+NumEntries = arrCountries[newDisplay].length
+for (i = 1; i <= NumEntries; i++){
+CitySelect.options[i] = new Option((arrCountries[newDisplay])[i-1],i )
+}
+}
+CitySelect.selectedIndex = 0
+}
+
+
+</script>
+<!-- wrap starts here -->
+<div id="wrap">
+		
+		<!--header -->
+  <div id="header"></div>
+  <!-- menu -->	
+		<div  id="menu">
+			<ul>
+				<li><a href="">Info</a></li>
+				<li><a href="">Fun</a></li>
+				<li><a href="">Biz</a></li>
+			</ul>
+		</div>					
+			
+		<!-- content-wrap starts here -->
+		<div id="content-wrap">
+		  <div id="main">
+				
+			<h1>Add Campaingn </h1>
+				
+				<table width="100%">
+                  <tr>
+                    <td><form enctype="multipart/form-data" name="form1" action="../admin/add_campaign.php" method="post" onsubmit="return VerifyData()">
+                      <table width="100%">
+                        <tr>
+                          <td width="30%"><label>Country</label> </td>
+                          <td width="70%"><select name="country" size="1"   onChange="handleCityChange(this[this.selectedIndex].value)">
+				    <option value="-1" selected="selected">--Select--</option>
+				    <option value="0">India</option>
+				    <option value="1">United States</option>
+				    <option value="2">United Kingdom</option>
+				    <option value="3">France</option>
+				    <option value="4">Canada</option>
+			      </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height="36"><label>City</label></td>
+                          <td><select name="city" size="1">
+                      <option value="-1">--Select--</option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
+                    </select>   
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height="32"><label>Category</label></td>
+                          <td><select name="category" size="1">
+				  <option value="-1" selected="selected">--Select--</option>
+                    <option value="1">Malls</option>
+				    <option value="2">Restaurants</option>
+				    <option value="3">Brand outlets</option>
+				    <option value="4">Pubs</option>
+				    <option value="5">Real Estate</option>
+					<option value="6">Electronics</option>
+				    <option value="7">Automobile</option>
+			              </select>  
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height="30"><label>Customer ID </label></td>
+                          <td><input name="cust_id" type="text" id="cust_id" /></td>
+                        </tr>
+                        <tr>
+                          <td height="27"><label>Title</label></td>
+                          <td><input name="title" type="text" id="title" size="50" /></td>
+                        </tr>
+                        <tr>
+                          <td height="27"><label>Message</label></td>
+                          <td><input name="message" type="text" id="message" size="60" /></td>
+                        </tr>
+                        <tr>
+                          <td height="32">&nbsp;</td>
+                          <td><input type="submit" class="button" value="Create Campaign" /></td>
+                        </tr>
+                        <tr>
+                          <td height="32">&nbsp;</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                      </table>
+                                        </form>
+                    </td>
+                  </tr>
+                </table>
+				<p><br />
+				</p>
+				<form action="#">
+			  </form>				
+				<br />	
+
+		  </div>
+		
+		<!-- content-wrap ends here -->	
+		</div>
+					
+		<!--footer starts here-->
+		<div id="footer">
+			
+			<p>
+		  &copy; 2007 <strong>3mugs.com</strong> All Rights Reserved </p>
+				
+		</div>	
+
+<!-- wrap ends here -->
+</div>
+
+</body>
+</html>

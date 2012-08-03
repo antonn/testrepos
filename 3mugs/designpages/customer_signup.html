@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta name="Description" content="Information architecture, Web Design, Web Standards." />
+<meta name="Keywords" content="your, keywords" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="Distribution" content="Global" />
+<meta name="Author" content="Erwin Aligam - ealigam@gmail.com" />
+<meta name="Robots" content="index,follow" />
+
+<link rel="stylesheet" href="../images/Refresh.css" type="text/css" />
+
+<title>3mugs.com</title>
+
+	
+</head>
+
+<body>
+
+
+ <script type="text/javascript">
+
+function VerifyData() {
+
+return true;
+
+
+}
+
+var arrIndia, arrUSA, arrCountries, arrCategories
+arrIndia = ["Bangalore","Chennai","Hyderabad","Mumbai","Delhi","Kolkatta"]
+arrUSA = ["New York", "Washington", "San Francisco","Buffalo"]
+
+arrCountries =[arrIndia, arrUSA]
+
+function handleCityChange(newDisplay){
+
+var StateSelect, CitySelect, NumEntries, i
+StateSelect = document.form1.country
+CitySelect = document.form1.city
+
+// Delete all entries in the cities list box
+for (i = CitySelect.length; i > 0; i--){
+CitySelect.options[i-1] = null
+}
+// Add comment option to City List box
+CitySelect.options[0] = new Option("-- Select City --",0)
+// If state is selected add its cities to the City List box
+
+if (newDisplay >= 0){
+NumEntries = arrCountries[newDisplay].length
+for (i = 1; i <= NumEntries; i++){
+CitySelect.options[i] = new Option((arrCountries[newDisplay])[i-1],i )
+}
+}
+CitySelect.selectedIndex = 0
+}
+
+
+</script>
+<!-- wrap starts here -->
+<div id="wrap">
+		
+		<!--header -->
+  <div id="header"></div>
+  <!-- menu -->	
+		<div  id="menu">
+			<ul>
+				<li><a href="">Info</a></li>
+				<li><a href="">Fun</a></li>
+				<li><a href="customer_signup.html">Biz</a></li>
+			</ul>
+		</div>					
+			
+		<!-- content-wrap starts here -->
+		<div id="content-wrap">
+		  <div id="main">
+				
+				<a name="TemplateInfo"></a>
+				<h1>Create a Customer account </h1>
+				
+				<table width="100%">
+                  <tr>
+                    <td><form enctype="multipart/form-data" name="form1" action="../admin/add_customer.php" method="post" onsubmit="return VerifyData()">
+                      <table width="100%">
+                        <tr>
+                          <td width="30%"><label>Customer Name </label> </td>
+                          <td width="70%"><input name="customer_name" type="text" id="customer_name" size="30" /></td>
+                        </tr>
+                        <tr>
+                          <td height="32"><label>Company name </label></td>
+                          <td><input name="company_name" type="text" id="company_name" size="30" /></td>
+                        </tr>
+                        <tr>
+                          <td height="30"><label>Address</label></td>
+                          <td><input name="address" type="text" id="address" size="30" /></td>
+                        </tr>
+                        <tr>
+                          <td height="27"><label>E-mail</label></td>
+                          <td><input name="email" type="text" id="email" size="30" /></td>
+                        </tr>
+                        <tr>
+                          <td height="27"><label>Mobile</label></td>
+                          <td><input name="mobile" type="text" id="mobile" size="30" /></td>
+                        </tr>
+                        <tr>
+                          <td height="27"><label>Country</label></td>
+                          <td><select name="country" size="1"   onChange="handleCityChange(this[this.selectedIndex].value)">
+				    <option value="-1" selected="selected">--Select--</option>
+				    <option value="0">India</option>
+				    <option value="1">United States</option>
+				    <option value="2">United Kingdom</option>
+				    <option value="3">France</option>
+				    <option value="4">Canada</option>
+			      </select>                          </td>
+                        </tr>
+                        <tr>
+                          <td height="27"><label>City</label></td>
+                          <td><select name="city" size="1">
+                      <option value="-1">--Select--</option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
+                    </select>                          </td>
+                        </tr>
+                        <tr>
+                          <td height="32"><label>Category</label></td>
+                          <td><select name="category" size="1">
+				  <option value="-1" selected="selected">--Select--</option>
+                    <option value="1">Malls</option>
+				    <option value="2">Restaurants</option>
+				    <option value="3">Brand outlets</option>
+				    <option value="4">Pubs</option>
+				    <option value="5">Real Estate</option>
+					<option value="6">Electronics</option>
+				    <option value="7">Automobile</option>
+			              </select>                          </td>
+                        </tr>
+                        <tr>
+                          <td height="32"><label>Desired login name </label></td>
+                          <td><input name="user_id" type="text" id="user_id" size="30" /></td>
+                        </tr>
+                        <tr>
+                          <td height="32"><label>Password</label></td>
+                          <td><input name="keyword" type="password" id="keyword" size="30" /></td>
+                        </tr>
+						 <tr>
+                          <td height="32"><label>Re-enter Password</label></td>
+                          <td><input name="keyword2" type="password" id="keyword2" size="30" /></td>
+                        </tr>
+                        <tr>
+                          <td height="32"><label>Terms of Service </label></td>
+                          <td>Please read the 3mugs.com Terms of agreement before signing up. </td>
+                        </tr>
+                        <tr>
+                          <td height="65">&nbsp;</td>
+                          <td><textarea name="textarea" cols="10" rows="3">3mugs.com Terms of Service
+
+Welcome to 3mugs.com!
+
+1. Your relationship with 3mugs.com
+
+    1.1 Your use of 3mugs.com’s products, software, services and web sites (referred to collectively as the “Services” in this document and excluding any services provided to you by 3mugs.com under a separate written agreement) is subject to the terms of a legal agreement between you and 3mugs.com. “3mugs.com” means 3mugs.com Inc., whose principal place of business is at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States. This document explains how the agreement is made up, and sets out some of the terms of that agreement.
+
+    1.2 Unless otherwise agreed in writing with 3mugs.com, your agreement with 3mugs.com will always include, at a minimum, the terms and conditions set out in this document. These are referred to below as the “Universal Terms”.
+
+    1.3 Your agreement with 3mugs.com will also include the terms of any Legal Notices applicable to the Services, in addition to the Universal Terms. All of these are referred to below as the “Additional Terms”. Where Additional Terms apply to a Service, these will be accessible for you to read either within, or through your use of, that Service.
+
+
+   
+</textarea></td>
+                        </tr>
+                        <tr>
+                          <td height="32">&nbsp;</td>
+                          <td><input type="submit" class="button" value="I Accept. Create my Account" /></td>
+                        </tr>
+                        <tr>
+                          <td height="32">&nbsp;</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                      </table>
+                                        </form>
+                    </td>
+                  </tr>
+                </table>
+				<p><br />
+				</p>
+				<form action="#">
+			  </form>				
+				<br />	
+
+		  </div>
+		
+		<!-- content-wrap ends here -->	
+		</div>
+					
+		<!--footer starts here-->
+		<div id="footer">
+			
+			<p>
+		  &copy; 2007 <strong>3mugs.com</strong> All Rights Reserved </p>
+				
+		</div>	
+
+<!-- wrap ends here -->
+</div>
+
+</body>
+</html>
